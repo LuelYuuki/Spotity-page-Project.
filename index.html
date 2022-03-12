@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https: //fonts.googleapis.com/css2? family= Roboto+Serif & display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="icospot.ico" type="image/x-icon">
+    <title>Spotify_clone_Project</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        main {
+            margin: auto;
+        }
+        /* Barra de navegação */
+
+        navbar#navbar {
+            display:flex;
+            background-color: rgba(0, 0, 0, 0.6);
+            color:white;
+            justify-content:center;
+            position:fixed;
+            width: 100%;
+        }
+        #navbar .navbar-container {
+            width: 80%;
+            display: flex;
+            align-items:center;
+            justify-content: space-between;
+            padding: 19px;
+        }
+        #navbar .navbar-container .logo {
+            height: 40px;
+            width: auto;
+
+        }
+        #navbar .navbar-container .navbar-itens {
+            display: flex;
+            list-style: none;
+        }
+        #navbar .navbar-container .navbar-itens .navbar-item {
+            padding: 0 20px;
+        }
+        #navbar .navbar-container .navbar-itens li:nth-child(3) {
+            border-right: 1px solid rgb(255, 255, 255);
+        }
+
+        /* Showcase(seção) */
+
+        #showcase {
+            width: 100%;
+            height: 100vh;
+            display:flex;
+            justify-content: center;
+            align-items:center;
+            color:white;
+            background: url('teste.png') center center/cover;
+            background-color: rgba(0, 0, 0, 0.4);
+            background-blend-mode: color;
+        }
+        #showcase .showcase-container {
+            display:flex;
+            flex-direction:column;
+            align-items: center;
+        }
+        #showcase .showcase-container h2 {
+            font-size: 5rem;
+            text-shadow: 3px 3px 10px black;
+        }
+        #showcase .showcase-container p {
+            margin: 15px 0;
+            font-size: 1.1rem;
+            text-shadow: 3px 3px 10px black;
+        }
+        
+        /* Botão reutilizável */
+        .btn-primary {
+            background: rgb(13, 161, 97);
+            color:white;
+            text-transform: uppercase;
+            padding: 15px 60px;
+            border: none;
+            border-radius: 50px;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+        footer#rodape {
+            background-color: black;
+            display: flex;
+            margin-bottom: 1px;
+            height: 370px;
+        }
+        #rodape .footer-container {
+            width: 100%;
+            display: flex;
+            padding: 20px 30px;
+            margin-top:25px;
+        }
+        #rodape .footer-container .logo-rodape {
+            height: 40px;
+            width: auto;
+        }
+        .topico-rodape {
+            color:rgb(139, 139, 139);
+            font-weight: bold;
+            text-align: center;
+        }
+        .item-rodape {
+            color:rgb(233, 233, 233);
+            padding: 15px;
+        }
+        .coluna-rodape {
+            list-style: none;
+            padding: 20px;
+            margin-left: 80px;
+            text-align: center;
+        }
+        .socials {
+            width: 100px;
+            height: auto;
+            margin-left: 130px;
+            list-style: none;
+            display: flex;
+        }
+        #imagem {
+            height: 40px;
+            width: auto;
+            margin-right: 20px;
+        }
+        #footer2 {
+            background-color: black;
+            color: rgb(233, 233, 233);
+            display: flex;
+        }
+        .footer2-container {
+            padding: 25px;
+            display: flex;
+        }
+        .itens-footer2 {
+            list-style: none;
+            display:flex;
+            margin-left: 100px;
+            text-align: center;
+        }
+        .item-footer2 {
+            width: 200px;
+            height: 50px;
+            padding: 15px;
+        }
+        .last-footer2 {
+            width: 140px;
+            height: auto;
+            margin-left: 50px;
+        }
+        .pais-footer2 {
+            display: flex;
+        }
+        .pais-footer2 img {
+            height: 20px;
+            width:auto;
+            margin-left: 9px;
+        }
+        .last-footer2 p {
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <!-- Navbar(Barra de navegação) -->
+        <navbar id="navbar">
+            <div class="navbar-container">
+                <img src="logo.png" alt="" class="logo">
+                <ul class="navbar-itens">
+                    <li class="navbar-item">Premium</li>
+                    <li class="navbar-item">Ajuda</li>
+                    <li class="navbar-item">Baixar</li>
+                    <li class="navbar-item">Inscrever-se</li>
+                    <li class="navbar-item">Entrar</li>
+                </ul>
+            </div>
+        </navbar>
+
+        <!-- Showcase -->
+        <div id = 'showcase'>
+            <div class="showcase-container">
+                <h2>Música para todos</h2>
+                <p>Milhões de músicas a sua escolha. E nem precisa de cartão de crédito.</p>
+                <button class="btn-primary" onmousedown="expor()" onmouseup="retroceder()">Obtenha o spotify Free</button>
+            </div>
+        </div>
+
+        <footer id = 'rodape'>
+            <div class = 'footer-container'>
+                <img src="logo.png" alt="" class="logo-rodape">
+                <ul class="coluna-rodape">
+                    <li class="topico-rodape">Empresa</li>
+                    <li class="item-rodape">Sobre</li>
+                    <li class="item-rodape">Empregos</li>
+                    <li class="item-rodape">For the record</li>
+                </ul>
+                <ul class="coluna-rodape">
+                    <li class="topico-rodape">Comunidades</li>
+                    <li class="item-rodape">Para artistas</li>
+                    <li class="item-rodape">Desenvolvedores</li>
+                    <li class="item-rodape">Marcas</li>
+                    <li class="item-rodape">Investidores</li>
+                    <li class="item-rodape">Fornecedores</li>
+                </ul>
+                <ul class="coluna-rodape">
+                    <li class="topico-rodape">Links feed</li>
+                    <li class="item-rodape">Ajuda</li>
+                    <li class="item-rodape">Player da web</li>
+                    <li class="item-rodape">Aplicatívo móvel grátis</li>
+                </ul>
+                <div class="socials">
+                    <li><a href=""><img id="imagem" src="instagram.png"></a></li>
+                    <li><a href=""><img id="imagem" src="twitter.png"></a></li>
+                    <li><a href=""><img id="imagem" src="facebook.png"></a></li>
+                </div>
+            </div>
+        </footer>
+
+        <footer id = 'footer2'>
+            <div class="footer2-container">
+                <ul class = 'itens-footer2'> 
+                    <li class="item-footer2">Legal</li>
+                    <li class="item-footer2">Centro de privacidade</li>
+                    <li class="item-footer2">Política de privacidade</li>
+                    <li class="item-footer2">Cookies</li>
+                    <li class="item-footer2">Sobre anúncios</li>
+                </ul>
+                <div class="last-footer2">
+                    <div class="pais-footer2">
+                        <p>Brasil </p>
+                        <img src="brazil.png" alt="">
+                    </div>
+                    <p>&copy; 2020 Spotify AB</p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Script para interação básica dos elementos clicáveis -->
+        <script>
+            /*funções de efeito para o botão da classe primária*/
+            function expor() {
+                var botao = window.document.getElementsByTagName('button')[0]
+                botao.style.background = 'rgb(10, 175, 104)'
+            }
+            function retroceder() {
+                var botao = window.document.getElementsByTagName('button')[0]
+                botao.style.background = 'rgb(13, 161, 97)'
+            }
+        </script>
+    </main>
+</body>
+
+</html>
